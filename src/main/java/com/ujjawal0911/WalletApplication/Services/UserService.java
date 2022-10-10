@@ -40,4 +40,13 @@ public class UserService {
         return userAccount;
     }
 
+    public UserAccount updateUser(UserAccount userAccount) {
+        userRepository.save(userAccount);
+        return userAccount;
+    }
+
+    public void deleteUser(UserAccount userAccount) {
+        userRepository.delete(userAccount);
+    }
+
 }

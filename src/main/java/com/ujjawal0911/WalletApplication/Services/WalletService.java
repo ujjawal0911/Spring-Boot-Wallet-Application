@@ -20,4 +20,18 @@ public class WalletService {
         walletRepository.findAll().forEach(wallets::add);
         return wallets;
     }
+
+    public Wallet depositMoney(int walletId, int amount) {
+        Wallet wallet = walletRepository.findById(walletId);
+        wallet.setBalance(wallet.getBalance() + amount);
+        walletRepository.save(wallet);
+        return wallet;
+    }
+
+    public Wallet withdrawMoney(int walletId, int amount) {
+        Wallet wallet = walletRepository.findById(walletId);
+        wallet.setBalance(wallet.getBalance() - amount);
+        walletRepository.save(wallet);
+        return wallet;
+    }
 }

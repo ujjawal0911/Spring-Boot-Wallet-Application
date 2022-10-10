@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class UserAccount {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String fullName;
     private String userName;

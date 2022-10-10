@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Wallet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int walletId;
     private int balance = 0;
     @JsonIgnore
