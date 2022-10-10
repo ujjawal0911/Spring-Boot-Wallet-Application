@@ -1,6 +1,7 @@
 package com.ujjawal0911.WalletApplication.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 
@@ -11,8 +12,13 @@ public class UserAccount {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String fullName;
+    @NonNull
+    @Column(unique = true)
     private String userName;
+    @NonNull
+    @Column(unique = true)
     private String emailId;
+    @NonNull
     private String password;
     @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
