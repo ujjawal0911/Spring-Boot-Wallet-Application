@@ -1,0 +1,16 @@
+----------------------------------------------------------------
+Mon Oct 10 21:05:23 IST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0183-c289-539b-000001827600 
+on database directory memory:D:\Java Projects\WalletApplication\3539dd4a-ecbc-4f1a-a81a-44b22c118268 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa 
+Loaded from file:/C:/Users/sriva/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=17.0.4.1+1-LTS-2
+user.dir=D:\Java Projects\WalletApplication
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Mon Oct 10 21:08:16 IST 2022:
+Shutting down instance a816c00e-0183-c289-539b-000001827600 on database directory memory:D:\Java Projects\WalletApplication\3539dd4a-ecbc-4f1a-a81a-44b22c118268 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa 
