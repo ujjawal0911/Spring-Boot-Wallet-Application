@@ -25,7 +25,7 @@ public class UserService {
         return userAccounts;
     }
 
-    public Optional<UserAccount> getUser(int userId) {
+    public UserAccount getUser(int userId) {
         return userRepository.findById(userId);
     }
 

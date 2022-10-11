@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
-    public Optional<UserAccount> getUserInformation(@PathVariable int userId) {
+    public UserAccount getUserInformation(@PathVariable int userId) {
         return userService.getUser(userId);
     }
 
@@ -36,7 +36,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/{userId}", method = RequestMethod.DELETE)
-    public void deleteUser(@PathVariable int userId, @RequestBody UserAccount userAccount) {
+    public void deleteUser(@PathVariable int userId) {
+        UserAccount userAccount = userService.getUser(userId);
         userService.deleteUser(userAccount);
     }
 
