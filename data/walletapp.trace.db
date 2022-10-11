@@ -1,0 +1,3 @@
+2022-10-11 11:54:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER_ACCOUNT" not found (this database is empty); SQL statement:
+select useraccoun0_.user_id as user_id1_1_, useraccoun0_.email_id as email_id2_1_, useraccoun0_.full_name as full_nam3_1_, useraccoun0_.password as password4_1_, useraccoun0_.user_name as user_nam5_1_, useraccoun0_.wallet_id as wallet_i6_1_ from user_account useraccoun0_ [42104-214]
