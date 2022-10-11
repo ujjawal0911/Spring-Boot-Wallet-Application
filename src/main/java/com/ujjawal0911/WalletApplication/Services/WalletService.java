@@ -1,7 +1,8 @@
 package com.ujjawal0911.WalletApplication.Services;
 
-import com.ujjawal0911.WalletApplication.Models.UserAccount;
+import com.ujjawal0911.WalletApplication.Models.AccountTransaction;
 import com.ujjawal0911.WalletApplication.Models.Wallet;
+import com.ujjawal0911.WalletApplication.Repositories.TransactionRepository;
 import com.ujjawal0911.WalletApplication.Repositories.WalletRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,10 @@ public class WalletService {
 
     @Autowired
     private WalletRepository walletRepository;
+    @Autowired
+    private TransactionService transactionService;
+    @Autowired
+    private TransactionRepository transactionRepository;
 
     public List<Wallet> getAllWallets() {
         List<Wallet> wallets = new ArrayList<>();
@@ -22,16 +27,26 @@ public class WalletService {
     }
 
     public Wallet depositMoney(int walletId, int amount) {
+
         Wallet wallet = walletRepository.findById(walletId);
         wallet.setBalance(wallet.getBalance() + amount);
         walletRepository.save(wallet);
+
+        AccountTransaction accountTransaction = transactionService.createTransaction(amount, wallet);
+        transactionRepository.save(accountTransaction);
+
         return wallet;
     }
 
     public Wallet withdrawMoney(int walletId, int amount) {
+
         Wallet wallet = walletRepository.findById(walletId);
         wallet.setBalance(wallet.getBalance() - amount);
         walletRepository.save(wallet);
+
+        AccountTransaction accountTransaction = transactionService.createTransaction(amount, wallet);
+        transactionRepository.save(accountTransaction);
+
         return wallet;
     }
 }
