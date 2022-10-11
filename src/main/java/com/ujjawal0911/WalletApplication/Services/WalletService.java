@@ -1,6 +1,7 @@
 package com.ujjawal0911.WalletApplication.Services;
 
 import com.ujjawal0911.WalletApplication.Models.AccountTransaction;
+import com.ujjawal0911.WalletApplication.Models.Type;
 import com.ujjawal0911.WalletApplication.Models.Wallet;
 import com.ujjawal0911.WalletApplication.Repositories.TransactionRepository;
 import com.ujjawal0911.WalletApplication.Repositories.WalletRepository;
@@ -33,6 +34,7 @@ public class WalletService {
         walletRepository.save(wallet);
 
         AccountTransaction accountTransaction = transactionService.createTransaction(amount, wallet);
+        accountTransaction.setType(Type.DEPOSIT);
         transactionRepository.save(accountTransaction);
 
         return wallet;
@@ -45,6 +47,7 @@ public class WalletService {
         walletRepository.save(wallet);
 
         AccountTransaction accountTransaction = transactionService.createTransaction(amount, wallet);
+        accountTransaction.setType(Type.WITHDRAWAL);
         transactionRepository.save(accountTransaction);
 
         return wallet;

@@ -13,6 +13,9 @@ public class AccountTransaction {
     @ManyToOne
     private Wallet wallet;
     private int amount;
+
+    @Enumerated(EnumType.STRING)
+    private Type type;
     private LocalDateTime performedAt;
 
     public AccountTransaction() {
@@ -54,5 +57,13 @@ public class AccountTransaction {
 
     public void setPerformedAt(LocalDateTime performedAt) {
         this.performedAt = performedAt;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 }
